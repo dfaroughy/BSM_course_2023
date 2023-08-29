@@ -7,6 +7,8 @@ vscode
 Docs
 Cards
 Tutorial_*
-DEMO_*
 src/BSMhighPT2023.egg-info
 src/BSMhighPT2023/__pycache__
+DEMO_Detector_level.ipynb
+DEMO_Matrix_Element_level.ipynb
+DEMO_Particle_level.ipynb
