@@ -1,3 +1,4 @@
+.DS_Store
 RUNS
 data
 ipynb_checkpoints
@@ -7,6 +8,6 @@ Docs
 Cards
 Tutorial_*
 src/BSMhighPT2023.egg-info
-src/BSMhighPT2023.egg-info
+src/.DS_Store
 src/BSMhighPT2023/__pycache__
 demo_*
