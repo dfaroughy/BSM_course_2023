@@ -6,8 +6,11 @@ MG5_aMC_v2_9_6
 vscode
 Docs
 Cards
+FeynRules/S1-matchete.nb
 Tutorial_*
 src/BSMhighPT2023.egg-info
 src/.DS_Store
 src/BSMhighPT2023/__pycache__
 demo_*
+.vscode
+.gitingore
