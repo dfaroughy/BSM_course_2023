@@ -34,20 +34,20 @@ check that the new envirnoment was created
 
 2. install pythia8 from within the MG5 prompt (say yes 'y' to every question asked by the prompt):
 
-  MG5_aMC> install mg5amc_py8_interface
+  `MG5_aMC> install mg5amc_py8_interface`
 
 3. test setup by simulating 10k ttbar events:
 
-  MG5_aMC> generate p p > t t~ 
-  MG5_aMC> output ../test_run
-  MG5_aMC> open index.html
-  MG5_aMC> launch ../RUNS/test
-  MG5_aMC> shower=Pythia8
+  `MG5_aMC> generate p p > t t~`
+  `MG5_aMC> output` 
+  `MG5_aMC> open index.html`
+  `MG5_aMC> launch` 
+  `MG5_aMC> shower=Pythia8`
 
-If everything works, you should see a value for the xsection of ~500 pb and two event files (~1MB and ~1GB each) located in the test directory:
+If everything works, you should see a browser pop up with the run results, then after a while, a value for the xsection of ~500 and event files generated at:
 
- - RUNS/test/Events/run_01/unweighted_events.lhe.gz 
- - RUNS/test/Events/run_01/tag_1_pythia8_events.hepmc.gz 
+ - PROC_sm_0/Events/run_01/unweighted_events.lhe.gz 
+ - PROC_sm_0/Events/run_01/tag_1_pythia8_events.hepmc.gz 
 
 Once you finish your MG5 runs be sure to deactivate the environment via:
 
@@ -61,7 +61,7 @@ Once you finish your MG5 runs be sure to deactivate the environment via:
 
   > conda create -n <py_env_name> python=3.7
 
-2. From the root dir (the one containing setup.py) activate the environment an then install the required packages:
+2. From the root dir (the one containing the setup.py file) activate the environment an then install the required package by running:
 
   > pip install -e .
 
