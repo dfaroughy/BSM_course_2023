@@ -12,5 +12,5 @@ src/BSMhighPT2023.egg-info
 src/.DS_Store
 src/BSMhighPT2023/__pycache__
 demo_*
-.vscode
-.gitingore
+vscode
+gitignore
