@@ -4,7 +4,6 @@ import pandas as pd
 import yaml
 import os
 from particle import PDGID, Particle
-from BSMhighPT2023.detector import smear
 
 class open_lhe(object):
     
@@ -28,11 +27,6 @@ class open_lhe(object):
             is_start_event = line.startswith("<event>") 
             is_end_event = line.startswith("</event>")
             state = str.split(line)
-
-            # is_parton = True if (len(state)==13 and 
-            #                     (state[0].startswith('-') or state[0].isdigit()) and 
-            #                      state[1].isdigit() and 
-            #                      int(state[1])==-1) else False
 
             is_final_state = True if (len(state)==13 and 
                                      (state[0].startswith('-') or state[0].isdigit()) and 
@@ -139,9 +133,9 @@ class open_HepMC(object):
 
 def get_LHE_events(path):
     events = []
-    with open_lhe(path) as events:
-        for states in events:
-            events.append(event)
+    with open_lhe(path) as final_states:
+        for states in final_states:
+            events.append(states)
     return events
 
 
@@ -177,3 +171,16 @@ def open_HEPData(path):
     data = np.stack((bins_low, bins_high, observed, background, error), axis=1)
     data = pd.DataFrame(data, columns=["bins_low", "bins_high", "Nobs", "Nbkg", "err"])
     return data
+
+
+def delta_phi(phi1, phi2):
+    """get the correct delta phi between [-pi, pi]]"""
+    dphi = np.abs(phi1 - phi2)
+    if dphi > np.pi:
+        dphi = 2 * np.pi - dphi 
+    return dphi
+
+def Delta_phi(phi1, phi2):
+    """get the correct delta phi between [-pi, pi]] for both numbers and arrays."""
+    dphi = np.abs(phi1 - phi2)
+    return np.where(dphi > np.pi, 2 * np.pi - dphi, dphi)

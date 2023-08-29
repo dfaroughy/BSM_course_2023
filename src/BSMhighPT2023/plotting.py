@@ -43,7 +43,7 @@ def event_display(event, point_sizes=(2, 200), ax=None, grid=False, marker='o', 
         # When only one point is present
         color = colors[0]
         size = event['pt'][0]
-        ax.scatter(event['eta'][0], event['phi'][0], color=color, s=size, marker=marker, linewidth=lw)
+        ax.scatter(event['eta'][0], event['phi'][0], sizes=point_sizes,  color=color, s=size, marker=marker, linewidth=lw, ax=ax)
     else:
         sns.scatterplot(x=event['eta'], 
                         y=event['phi'], 
