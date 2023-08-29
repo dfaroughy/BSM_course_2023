@@ -1,0 +1,11 @@
+scipy
+pandas
+json
+yaml
+pyhf
+seaborn
+particle
+awkward
+fastjet
+vector
+iminuit
