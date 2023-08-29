@@ -15,7 +15,7 @@ Installation is pretty sttraightforward as any other Mathematica package. Follow
   
   > conda create -n <mg_env_name> python=2.7
   
-Replace `<mg_env_name>' with whatever name you like, e.g. `madgraph_bsm_lj2023'
+Replace `<mg_env_name>` with whatever name you like, e.g. `madgraph_bsm_lj2023`
 check that the new envirnoment was created
  
   > conda info --envs
@@ -55,13 +55,13 @@ Once you finish your MG5 runs be sure to deactivate the environment via:
 
 # PYTHON SCRIPTS
 
-### Instructions for running python scripts 
+### Instructions for running python scripts in DEMOS
   
 1. create a conda environment for python scripts (recommended) with python 3.7:
 
   > conda create -n <py_env_name> python=3.7
 
-2. From the root dir (the one containing the setup.py file) activate the environment an then install the required package by running:
+2. From the root directory activate the environment an then install the required package by running:
 
   > pip install -e .
 
