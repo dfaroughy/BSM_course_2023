@@ -4,7 +4,7 @@ Download or `git clone` this repository to your local computer:
 
   > git clone https://github.com/dfaroughy/BSM_course_2023
 
-This will be our working directory
+This will be our working directory for all the below.
 
 # FeynRules
 
