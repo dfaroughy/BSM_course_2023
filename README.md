@@ -4,7 +4,7 @@ Download or `git clone` this repository to your local computer:
 
   > git clone https://github.com/dfaroughy/BSM_course_2023
 
-This will be our working directory for all the below.
+This will be our working directory for all what's below.
 
 # FeynRules
 
@@ -36,15 +36,15 @@ check that the new envirnoment was created
 
 1. Download MadGraph from https://launchpad.net/mg5amcnlo/2.0/2.6.x/+download/MG5_aMC_v2.6.7.tar.gz and save in root directory (the one containing setup.py)
 
-1. enter MG5_aMC_v2_6_7 directory and run MG5:
+2. enter MG5_aMC_v2_6_7 directory and run MG5:
 
   > ./bin/mg5_aMC
 
-2. install pythia8 from within the MG5 prompt (say yes 'y' to every question asked by the prompt):
+3. install pythia8 from within the MG5 prompt (say yes 'y' to every question asked by the prompt):
 
   `MG5_aMC> install mg5amc_py8_interface`
 
-3. test setup by simulating 10k ttbar events:
+4. test setup by simulating 10k ttbar events:
 
   `MG5_aMC> generate p p > t t~`
   `MG5_aMC> output` 
