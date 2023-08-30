@@ -1,0 +1,47 @@
+
+Generation syntax:
+
+https://answers.launchpad.net/mg5amcnlo/+faq/2014
+
+
+- define multiparticles
+
+	MG_aMC> define v = w+ w- z a   # ex: EW gauge bosons
+	MG_aMC> define p = u u~	d d~   # proton with only valence quarks
+	MG_aMC> define j = j b b~      # adds b quark to jet definition (5FS)
+
+- generate samples with multiple processes
+
+	MG_aMC> generate p p > W+
+	MG_aMC> add process p p > W-
+
+	equivalent to:
+
+	MG_aMC> define W = W+ W-
+	MG_aMC> generate p p > W
+
+- include decay chains:
+
+	MG_aMC> generate p p > W+, W+ > j j
+	MG_aMC> generate p p > W+, W+ > mu+ vm  
+	MG_aMC> generate p p > Z W-, (Z > e+ e-, W- > e- vl~) 
+
+- restricting intermediate states
+
+	MG_aMC> generate p p > e+ e-            # contains everything 
+	MG_aMC> generate p p > Z, Z > e+ e-     # keeps only on shell Z ( valid in narrow width approx) 
+	MG_aMC> generate p p > e+ e- $ Z        # forbids Z to be on-shell (complement of above syntax)
+
+	these satisfy  xsec(p p > e+ e-)  = xsec((p p > z, z > e+ e-)  + xsec(p p > e+ e- $ Z)
+
+- other restriction syntaxes to use with more cuation (not gauge invariant):
+
+	MG_aMC> generate p p > Z > e+ e-        # requires only Z in s-chanel  (no photon)
+	MG_aMC> generate p p > e+ e- $$ Z       # excludes Z from s-channel  (only photon)
+	MG_aMC> generate p p > e+ e- / Z        # excludes all intermediate Z
+
+- coupling orders
+
+	MG_aMC> generate p p > t t~            # equivalent QCD=2 QED=0  (QCD prioritized over QED by default)
+	MG_aMC> generate p p > t t~ QED<=2     # adds photon and Z s-chanel contributions
+  	MG_aMC> generate p p > t t~ QCD^2==2   # produces interfercne between QCD and QED
